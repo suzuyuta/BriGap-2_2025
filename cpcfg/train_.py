@@ -70,7 +70,7 @@ def main(args):
     total_steps = 0  # <- add
     validation_step = args.val_every  # <- add
     length_incr_step = args.incr_step  # <- add
-    next_incr_step = length_incr_step
+    next_incr_step = length_incr_step  #
 
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
