@@ -1,6 +1,4 @@
-# latent_artificial_syntax_pub
-
-## NOW Construction
+# latent_artificial_syntax_pub (NOW Construction)
 
 Code for the paper:
 
