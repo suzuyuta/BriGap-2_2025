@@ -1,4 +1,4 @@
-# This code is based on
+# This code is a copy of
 # Kim et al. (2019) "Compound Probabilistic Context-Free Grammars for Grammar Induction"
 # The original source code is available on their GitHub page:
 # https://github.com/harvardnlp/compound-pcfg
