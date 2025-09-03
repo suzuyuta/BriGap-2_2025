@@ -44,6 +44,9 @@ Please contact us if you require access to the full datasets.
 
 ## Evaluation
 
+Evaluation was conducted using the F1 score and recall of preterminals.
+The F1 score was computed with code based on [PYEVALB](https://github.com/flyaway1217/PYEVALB).
+
 ## How to use
 
 
