@@ -36,7 +36,11 @@ We applied a PCFG to generate a large number of French sentences with binary tre
 
 For each category, we prepared training datasets of sizes **3k, 12k, 100k, and 400k**. The validation set consists of 3k sentences, identical across configurations. For fairness, the test set is fixed to the second configuration (`+sr-mce`).
 
-Due to storage limitations, only a subset of the datasets is made available here. Please contact us if you require access to the full datasets.
+Due to storage limitations, only a subset of the datasets is made available here. 
+This repository contains 3k size training dataset, their 3k validation dataset and 75k test dataset. 
+(`lex_relobj` for `+sr+mce`, `lex_norelobj` for `+sr-mce`, `flat_relobj` for `-sr+mce` and `flat_norelobj` for `-sr-mce`)
+
+Please contact us if you require access to the full datasets.
 
 ## Evaluation
 
