@@ -2,7 +2,7 @@
 
 Code for the paper:
 
-On the relative impact of categorical and semantic information on the induction of self-embedding structures
+*On the relative impact of categorical and semantic information on the induction of self-embedding structures* (Hyperlink is coming soon)
 
 Antoine Venant, Yutaka Suzuki
 
