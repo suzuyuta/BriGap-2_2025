@@ -22,6 +22,20 @@ Their code is available at the following GitHub repository: [URNNG](https://gith
 
 ## Data
 
+We applied a PCFG to generate a large number of French sentences with binary tree structures. To ensure realistic word dependencies, we used [*CamemBERT*](https://huggingface.co/docs/transformers/model_doc/camembert) to estimate the probabilities of subjects and objects given a verb. The generated datasets fall into four categories:
+
+1. Probability constraints on word choice, with center-embedding structures. (`+sr+mce`)
+
+2. Probability constraints on word choice, **without** center-embedding structures. (`+sr-mce`)
+
+3. **No** probability constraints on word choice, with center-embedding structures. (`-sr+mce`)
+
+4. **No** probability constraints on word choice, **without** center-embedding structures. (`-sr-mce`)
+
+For each category, we prepared training datasets of sizes **3k, 12k, 100k, and 400k**. The validation set consists of 3k sentences, identical across configurations. For fairness, the test set is fixed to the second configuration (`+sr-mce`).
+
+Due to storage limitations, only a subset of the datasets is made available here. Please contact us if you require access to the full datasets.
+
 ## Evaluation
 
 ## How to use
