@@ -22,15 +22,17 @@ Their code is available at the following GitHub repository: [URNNG](https://gith
 
 ## Data
 
-We applied a PCFG to generate a large number of French sentences with binary tree structures. To ensure realistic word dependencies, we used [*CamemBERT*](https://huggingface.co/docs/transformers/model_doc/camembert) to estimate the probabilities of subjects and objects given a verb. The generated datasets fall into four categories:
+We applied a PCFG to generate a large number of French sentences with binary tree structures. By adjusting the probabilities of subject and object relative pronouns, we were able to generate sentences with complex multiple center-embedding structures, as well as sentences without such embeddings. To ensure realistic word dependencies, we used [*CamemBERT*](https://huggingface.co/docs/transformers/model_doc/camembert) to estimate the probabilities of subjects and objects given a verb (*selectional restriction*). The generated datasets fall into four categories:
 
-1. Probability constraints on word choice, with center-embedding structures. (`+sr+mce`)
+1. Probability constraints on word choice, with center-embedding structures. (`+sr+mce`)[^1]
 
 2. Probability constraints on word choice, **without** center-embedding structures. (`+sr-mce`)
 
 3. **No** probability constraints on word choice, with center-embedding structures. (`-sr+mce`)
 
 4. **No** probability constraints on word choice, **without** center-embedding structures. (`-sr-mce`)
+
+[^1]:(`sr` : *selectional restrictions*, `mce` : *multiple center-embeddings*)
 
 For each category, we prepared training datasets of sizes **3k, 12k, 100k, and 400k**. The validation set consists of 3k sentences, identical across configurations. For fairness, the test set is fixed to the second configuration (`+sr-mce`).
 
