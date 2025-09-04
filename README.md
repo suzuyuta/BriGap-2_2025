@@ -53,31 +53,31 @@ The following are sample commands for running the experiments:
 
 1. Pretraitement
 
-The preprocessing is common to URNNG and CPCFG. Executing it once will transform the data into the proper format for both models.
+    The preprocessing is common to URNNG and CPCFG. Executing it once will transform the data into the proper format for both models.
 
-`preprocess.py --trainfile ./data/train_3k_lex_relobj.txt --valfile ./data/val_lex_relobj.txt --testfile ./data/hd-test_lex_norelobj.txt --outputfile ./lex_relobj_3k --vocabsize 10000 --lowercase 1 --replace_num 1 `
+    `preprocess.py --trainfile ./data/train_3k_lex_relobj.txt --valfile ./data/val_lex_relobj.txt --testfile ./data/hd-test_lex_norelobj.txt --outputfile ./lex_relobj_3k --vocabsize 10000 --lowercase 1 --replace_num 1 `
 
 2. Training
 
-**URNNG**
+    **URNNG**
 
-`train_.py --train_file ./data/lex_relobj_3k-train.pkl --val_file ./data/lex_relobj_3k-val.pkl --save_path urnng_lex_relobj_3k_0.pt --mode unsupervised --gpu 0 --seed 3435 --print_every 100 --val_every 500 --kl_warmup 10000 --train_q_steps 10000 --min_steps 1500 --num_epochs 250 --early_stop_by_step True  --train_data_output --save_each_val `
+    `train_.py --train_file ./data/lex_relobj_3k-train.pkl --val_file ./data/lex_relobj_3k-val.pkl --save_path urnng_lex_relobj_3k_0.pt --mode unsupervised --gpu 0 --seed 3435 --print_every 100 --val_every 500 --kl_warmup 10000 --train_q_steps 10000 --min_steps 1500 --num_epochs 250 --early_stop_by_step True  --train_data_output --save_each_val `
 
-**CPCFG**
+    **CPCFG**
 
-`train_.py --train_file ./data/lex_relobj_3k-train.pkl --val_file ./data/lex_relobj_3k-val.pkl --save_path cpcfg_lex_relobj_3k_0.pt  --gpu 0 --seed 3435 --print_every 100 --val_every 500 --min_steps 1500 --num_epochs 250 --incr_step 500 --max_length 30 --final_max_length 999 --early_stopping_patience 3 --early_stopping --min_steps 5000  --train_data_output --save_each_val`
+    `train_.py --train_file ./data/lex_relobj_3k-train.pkl --val_file ./data/lex_relobj_3k-val.pkl --save_path cpcfg_lex_relobj_3k_0.pt  --gpu 0 --seed 3435 --print_every 100 --val_every 500 --min_steps 1500 --num_epochs 250 --incr_step 500 --max_length 30 --final_max_length 999 --early_stopping_patience 3 --early_stopping --min_steps 5000  --train_data_output --save_each_val`
 
-For *NPCFG*, you can simply add `--z_dim 0`.
+    For *NPCFG*, you can simply add `--z_dim 0`.
 
 4. Parse
 
-**URNNG**
+    **URNNG**
 
-`parse.py --model_file ./urnng_lex_relobj_3k_0.pt --data ./data/hd-test_lex_norelobj.txt --out_file ./pred-parse_lex_relobj_3k_0.txt --gold_out_file ./gold-parse_lex_relobj_3k_0.txt --gpu 0`
+    `parse.py --model_file ./urnng_lex_relobj_3k_0.pt --data ./data/hd-test_lex_norelobj.txt --out_file ./pred-parse_lex_relobj_3k_0.txt --gold_out_file ./gold-parse_lex_relobj_3k_0.txt --gpu 0`
 
-**C(N)PCFG**
+    **C(N)PCFG**
 
-`eval.py --model_file ./cpcfg_lex_relobj_3k_0.pt --data_file ./data/hd-test_lex_norelobj.txt --out_file ./pred-parse_lex_relobj_3k_0.txt --gold_out_file ./gold-parse_lex_relobj_3k_0.txt --gpu 0`
+    `eval.py --model_file ./cpcfg_lex_relobj_3k_0.pt --data_file ./data/hd-test_lex_norelobj.txt --out_file ./pred-parse_lex_relobj_3k_0.txt --gold_out_file ./gold-parse_lex_relobj_3k_0.txt --gpu 0`
 
 
 
