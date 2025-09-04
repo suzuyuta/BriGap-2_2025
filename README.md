@@ -49,4 +49,12 @@ The F1 score was computed with code based on [PYEVALB](https://github.com/flyawa
 
 ## How to use
 
+1. Pretraitement
+
+2. Training
+
+3. Parse
+
+4. Evaluation
+
 
