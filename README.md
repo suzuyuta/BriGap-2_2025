@@ -1,4 +1,4 @@
-# latent_artificial_syntax_pub (NOW Construction)
+# latent artificial syntax (version publique)
 
 Code for the paper:
 
